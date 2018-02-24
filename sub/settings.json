@@ -1,0 +1,17 @@
+{
+  "Setting": {
+    "db_engine": "PgSQL"
+  },
+  "Server": {
+    "Web": {
+      "host": "0.0.0.0",
+      "port": 80,
+      "foo": "bar"
+    },
+    "PgSQL": {
+      "user": "postgres",
+      "pw": "### Password Here ###",
+      "db": "main"
+    }
+  }
+}
