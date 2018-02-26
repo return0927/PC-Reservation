@@ -33,7 +33,7 @@ class Setting:
 
     def get(self, key=""):
         if key:
-            if type(key) is not type([]): key = [key]
+            if not isinstance(key, dict): key = [key]
 
             _temp = []
             for k in key:
@@ -49,3 +49,19 @@ class Setting:
             return _temp[0] if len(_temp) == 1 else _temp
         else:
             return None
+
+    def set(self, _set=''):
+        if not isinstance(_set, dict):
+            raise TypeError({"object":_set, "object_type":type(_set), "objective_type":dict})
+
+        errors = []
+        succs = []
+
+        for k, v in _set.items():
+            try:
+                self.dict[k] = v
+                succs.append(k)
+            except Exception as ex:
+                errors.append((k,ex))
+
+        return {"error": True, "suc":succs, "skipped":errors} if len(errors) else {"error":False}
