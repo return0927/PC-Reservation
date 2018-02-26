@@ -5,10 +5,11 @@
   "Server": {
     "Web": {
       "host": "0.0.0.0",
-      "port": 80,
-      "foo": "bar"
+      "port": 80
     },
     "PgSQL": {
+      "host": "localhost",
+      "port": 5432,
       "user": "postgres",
       "pw": "### Password Here ###",
       "db": "main"
